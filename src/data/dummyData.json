@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "input": {
+      "code": "function memoize(fn) {\n  const cache = new Map();\n  return function (...args) {\n    const key = args.join('-');\n    if (cache.has(key)) {\n      return cache.get(key);\n    }\n    const value = fn(...args);\n    cache.set(key, value);\n    return value;\n  };\n}",
+      "runtime": "81 ms",
+      "memory": "91600 KB"
+    },
+    "output": {
+      "code": "function memoize(fn) {\n  const cache = new Map();\n  return function (...args) {\n    const key = args.join('-');\n    if (cache.has(key)) {\n      return cache.get(key);\n    }\n    const value = fn(...args);\n    cache.set(key, value);\n    return value;\n  };\n}",
+      "runtime": "70 ms",
+      "memory": "78100 KB "
+    }
+  },
+  {
+    "id": 2,
+    "input": {
+      "code": "var groupAnagrams = function(strs) {\n     let obj = {};\n        let outputArray = []\n        for(let i = 0;i < strs.length;i++){\n            let currentKey = strs[i].split(\"\").sort().join(\"\");\n            if(obj.hasOwnProperty(currentKey)){\n                obj[currentKey].push(i)\n            }else{\n                obj[currentKey] = [i]\n            }\n            //console.log(obj)\n        }\n      \n\n        for(let key in obj){\n            let currentarry = [];\n            let indexArray = obj[key]\n               console.log(indexArray)\n            for(let i = 0; i< indexArray.length; i++){\n                \n                currentarry.push(strs[indexArray[i]])\n            }\n            outputArray.push(currentarry)\n        }\n        return outputArray;  \n    \n};",
+      "runtime": "78 ms",
+      "memory": "65000 KB"
+    },
+    "output": {
+      "code": "var groupAnagrams = function(strs) {\n    // edge case if there is only 1 word in the input array\n    if (strs.length === 1) {\n        return [strs];\n    }\n\n    let map = new Map();\n\n    for (let s of strs) {\n        let counts = Array(26).fill(0);\n        for (let i = 0; i < s.length; i++) {\n            counts[s.charCodeAt(i) - 'a'.charCodeAt(0)]++;\n        }\n        let keyStr = counts.toString(); // this creates a unique hash for each frequency count\n        if (!map.has(keyStr)) {\n            map.set(keyStr, []);\n        }\n        map.get(keyStr).push(s);\n    }\n\n    return Array.from(map.values());\n};",
+      "runtime": "60 ms",
+      "memory": "58300 KB"
+    }
+  },
+  {
+    "id": 3,
+    "input": {
+      "code": "var isMatch = function(s, p) {\n    let i = 0;\n    let j = 0;\n\n    while (i < s.length || j < p.length) {\n        let char = s[i];\n        let match = p[j]\n\n        if (p[j+1] === '*') {\n            j+= 2\n            // 0 instances\n            if (isMatch(s.slice(i, s.length), p.slice(j, p.length))) {\n                return true\n            }\n\n            // 1 or more instance\n            while (i < s.length && matchChar(char, match)) {\n                i++\n                char = s[i]\n                if (isMatch(s.slice(i, s.length), p.slice(j, p.length))) {\n                    return true\n                }\n            }\n        } else if (char && matchChar(char, match)) {\n            i++\n            j++\n        } else {\n            return false\n        }\n    }\n    \n    return j === p.length && i === s.length\n};\n\nconst matchChar = (a, b) => a === b || b === '.';",
+      "runtime": "68 ms",
+      "memory": "56500 KB"
+    },
+    "output": {
+      "code": "const isMatch = (s, p) => new RegExp(`^${p.replace(/\\*+/, \"*\")}$`).test(s);",
+      "runtime": "50 ms",
+      "memory": "48300 KB"
+    }
+  }
+]
