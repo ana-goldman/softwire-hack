@@ -28,6 +28,9 @@ const App = () => {
       setAnalysis({ runtime: 'Not found', memoryUsage: 'Not found' });
       setCo2Emissions(null);
     }
+    setOptimizedCode('');
+    setOptimizedAnalysis(null);
+    setOptimizedCo2Emissions(null);
   };
 
   const handleOptimize = (inputCode) => {
