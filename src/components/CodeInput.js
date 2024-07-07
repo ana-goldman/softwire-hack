@@ -9,6 +9,7 @@ const CodeInput = ({ onAnalyze }) => {
 
   const handleAnalyzeClick = () => {
     onAnalyze(code);
+    setCode('');
   };
 
   return (
