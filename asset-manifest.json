@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/softwire-hack/static/css/main.23b46f2e.css",
+    "main.js": "/softwire-hack/static/js/main.b264d302.js",
+    "static/js/453.66b21cf1.chunk.js": "/softwire-hack/static/js/453.66b21cf1.chunk.js",
+    "index.html": "/softwire-hack/index.html",
+    "main.23b46f2e.css.map": "/softwire-hack/static/css/main.23b46f2e.css.map",
+    "main.b264d302.js.map": "/softwire-hack/static/js/main.b264d302.js.map",
+    "453.66b21cf1.chunk.js.map": "/softwire-hack/static/js/453.66b21cf1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23b46f2e.css",
+    "static/js/main.b264d302.js"
+  ]
+}
