@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CodeInput from './components/CodeInput';
 import AnalysisResult from './components/AnalysisResult';
 import OptimizedResult from './components/OptimizedResult';
+import Improvement from './components/Improvement';
 import Button from './components/Button';
 import data from './data/dummyData.json';
 import { carbonCalculator } from './utils/CarbonCalculator';
@@ -60,6 +61,9 @@ const App = () => {
           analysis={optimizedAnalysis}
           co2Emissions={optimizedCo2Emissions}
         />
+      )}
+      {co2Emissions && optimizedCo2Emissions && (
+        <Improvement originalCo2={co2Emissions} optimizedCo2={optimizedCo2Emissions} />
       )}
     </div>
   );
