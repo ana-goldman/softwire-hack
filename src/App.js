@@ -64,13 +64,13 @@ const App = () => {
   };
 
   return (
-    <div className='App'>
-      <h1>Code Analysis and Optimization</h1>
+    <div className='App p-4'>
+      <h1 className='text-3xl font-bold mb-4'>Code Analysis and Optimization</h1>
       <CodeInput onAnalyze={handleAnalyze} />
-      {analysing && <Loader text={'Analysing...'} />}
+      {analysing && <Loader text='Analysing...' />}
       {analysis && <AnalysisResult code={code} analysis={analysis} co2Emissions={co2Emissions} />}
       <Button onOptimize={() => handleOptimize(code)} />
-      {optimising && <Loader text={'Optimising...'} />}
+      {optimising && <Loader text='Optimising...' />}
       {optimizedCode && (
         <OptimizedResult
           code={optimizedCode}

@@ -6,11 +6,13 @@ const Improvement = ({ originalCo2, optimizedCo2 }) => {
   const improvement = ((originalCo2 - optimizedCo2) / originalCo2) * 100;
 
   return (
-    <div>
-      <h2>CO2 Emissions Improvement</h2>
-      <p>Original CO2 Emissions: {originalCo2} grams</p>
-      <p>Optimized CO2 Emissions: {optimizedCo2} grams</p>
-      <p>Improvement: {improvement.toFixed(2)}%</p>
+    <div className='mt-4'>
+      <h2 className='text-xl font-bold mb-2'>CO2 Emissions Improvement</h2>
+      <p className='mb-2'>Original CO2 Emissions: {originalCo2} grams</p>
+      <p className='mb-2'>Optimized CO2 Emissions: {optimizedCo2} grams</p>
+      <p className='text-3xl font-bold mb-4 text-green-600'>
+        Improvement: {improvement.toFixed(2)}%
+      </p>
     </div>
   );
 };
